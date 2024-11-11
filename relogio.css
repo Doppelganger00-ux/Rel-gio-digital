@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #212149, #14316b, #0f0f10);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #61dafb;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 5.2em;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#clock {
+    font-family: 'Playfair Display', serif;
+    font-size: 6.5em;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.timezone-container {
+    display: flex;
+    flex-direction: row; /* Alinha os elementos na horizontal */
+    align-items: center;
+    gap: 10px; /* Espaçamento entre a barra de pesquisa e o menu de seleção */
+    animation: slideUp 1.5s ease-in-out;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 1em;
+    width: 250px; /* Ajuste a largura se necessário */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+input#timezoneSearch {
+    flex: 1; /* A barra de pesquisa ocupa o restante do espaço disponível */
+}
+
+select {
+    appearance: none;
+    cursor: pointer;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+
+input:focus, select:focus {
+    border-color: #61dafb;
+    outline: none;
+    box-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
